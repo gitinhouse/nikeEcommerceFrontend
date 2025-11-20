@@ -1,0 +1,11 @@
+#SelectSizeButtons{
+    &>button{
+    width: 160px;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    margin-right: 6px;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 10px;
+     }
+}

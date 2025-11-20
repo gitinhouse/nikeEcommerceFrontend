@@ -1,0 +1,39 @@
+#AdminPageTable{
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid;
+    border-collapse: collapse;
+    &>thead>tr,&>tbody>tr{
+        &>th,&>td{
+            border: 1px solid;
+            width: 170px;
+        }
+        &>:nth-child(4){
+            width: 250px !important;
+        }
+    }
+}
+
+#ViewButton{
+    background-color: #0096FF;
+    border: none;
+    margin: 2px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#EditButton{
+    background-color: #ff9100;
+    border: none;
+    margin: 2px;
+    padding: 8px;
+    border-radius: 10px;
+}
+#DeleteButton{
+    background-color: #fa1e1e;
+    color: white;
+    border: none;
+    margin: 2px;
+    padding: 8px;
+    border-radius: 10px;
+}

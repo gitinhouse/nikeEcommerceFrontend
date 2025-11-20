@@ -1,0 +1,38 @@
+#NavbarDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  & > div {
+    margin-top: 20px;
+    & > a {
+      text-decoration: none;
+      color: inherit;
+      margin-left: 10px;
+    }
+    &>button{
+      margin-left: 10px;
+      background-color: red;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius:5px ;
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#NavbarSecondDiv{
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+    padding: 10px;
+}
+
+form{
+  width:300px;
+}
