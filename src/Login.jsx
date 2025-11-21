@@ -59,7 +59,7 @@ function Login() {
       try {
         // const response = await fetch('https://gl7gpk5d-8000.inc1.devtunnels.ms/login/', {
         // const response = await fetch('http://127.0.0.1:8000/login/', {
-        const response = await fetch('/', {
+        const response = await fetch('/api/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(dataToSend),

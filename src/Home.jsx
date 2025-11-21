@@ -43,7 +43,7 @@ function Home() {
 
     setLoading(true);
 
-    let apiURL = `/shoeDetails/?page=${currentPage}`;
+    let apiURL = `/api/shoeDetails/?page=${currentPage}`;
 
     if (sortOrder !== 'default') {
         // 'ascending' maps to 'shoePrice', 'descending' maps to '-shoePrice'

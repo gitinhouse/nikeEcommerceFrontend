@@ -115,7 +115,7 @@ function AddShoeForm() {
 
       try {
         // const response = await fetch("https://gl7gpk5d-8000.inc1.devtunnels.ms/shoeDetails/",{
-        const response = await fetch("/shoeDetails/",{
+        const response = await fetch("/api/shoeDetails/",{
             method: "POST",
             body: FormDataToSend,
             // headers: {

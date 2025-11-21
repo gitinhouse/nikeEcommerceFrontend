@@ -128,7 +128,7 @@ function EditShoeForm() {
 
       try {
         const response = await fetch(
-          `${BACKEND_BASE_URL}/shoeDetails/${id}/`,
+          `/api/shoeDetails/${id}/`,
           {
             method: "PATCH",
             body: FormDataToSend,

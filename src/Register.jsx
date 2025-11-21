@@ -106,7 +106,7 @@ function Register() {
     try {
         // const response = await fetch('https://gl7gpk5d-8000.inc1.devtunnels.ms/',{
         // const response = await fetch('http://127.0.0.1:8000/',{
-        const response = await fetch('/register/', {
+        const response = await fetch('/api/register/', {
           method:'POST',
           body: FormDataToSend,
         })

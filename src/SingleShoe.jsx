@@ -67,7 +67,7 @@ function SingleShoe() {
     setLoading(true);
 
     // const apiURL = `${BACKEND_BASE_URL}/shoeDetails/${id}/`;
-    const apiURL = `/shoeDetails/${id}/`;
+    const apiURL = `/api/shoeDetails/${id}/`;
 
     const config = {
       headers: {

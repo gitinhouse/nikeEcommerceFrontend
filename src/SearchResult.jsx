@@ -51,7 +51,7 @@ function SearchResult() {
     setError(null);
 
     // const apiUrl = `${BACKEND_BASE_URL}/shoeDetails/?search=${encodeURIComponent(
-    const apiUrl = `/shoeDetails/?search=${encodeURIComponent(
+    const apiUrl = `/api/shoeDetails/?search=${encodeURIComponent(
       query
     )}&page=${currentPage}`;
 

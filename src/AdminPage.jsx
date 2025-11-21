@@ -137,7 +137,7 @@ function AdminPage() {
     // const csrftoken = getCookie('csrftoken');
     
     try {
-      const response = await fetch(`/shoeDetails/${id}/`, {
+      const response = await fetch(`/api/shoeDetails/${id}/`, {
         method: "DELETE",
         // credentials: "include",
         // headers: {
