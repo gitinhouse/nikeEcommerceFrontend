@@ -45,22 +45,8 @@ const VisuallyHiddenInput = styled("input")({
 });
 
 const Max_file_size = 15 * 1024 * 1024;
-const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
+// const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
 
-// function getCookie(name) {
-//     let cookieValue = null;
-//     if (document.cookie && document.cookie !== '') {
-//         const cookies = document.cookie.split(';');
-//         for (let i = 0; i < cookies.length; i++) {
-//             const cookie = cookies[i].trim();
-//             if (cookie.substring(0, name.length + 1) === (name + '=')) {
-//                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-//                 break;
-//             }
-//         }
-//     }
-//     return cookieValue;
-// }
 
 
 function EditShoeForm() {
@@ -79,21 +65,8 @@ function EditShoeForm() {
         return; 
     }
 
-    // const existingToken = getCookie('csrftoken');
-    // if (existingToken) {
-    //     setCsrfToken(existingToken);
-    //     console.log("Line104",existingToken)
-    // } else {
-    //     axios.get(`${BACKEND_BASE_URL}/user/`, { withCredentials: true })
-    //         .then(res => {
-    //             const fetchedToken = getCookie('csrftoken');
-    //             setCsrfToken(fetchedToken);
-    //             console.log("Line110",fetchedToken)
-    //         })
-    //         .catch(err => setGeneralError("Failed to fetch security token."));
-    // }
-
-    axios.get(`${BACKEND_BASE_URL}/shoeDetails/${id}/`, {
+    // axios.get(`${BACKEND_BASE_URL}/shoeDetails/${id}/`, {
+    axios.get(`/shoeDetails/${id}/`, {
         headers: { 'Authorization': `Token ${token}` },
         withCredentials: true
     })
@@ -153,25 +126,12 @@ function EditShoeForm() {
         });
       }
 
-      // const csrftoken = getCookie('csrftoken');
-      // console.log("CSRF token value being sent:", csrftoken);
-      // console.log("CSRF token length:", csrftoken ? csrftoken.length : "N/A");
-
-      // if (!csrftoken) {
-      //     setGeneralError("CSRF token is missing. Cannot submit form.");
-      //     return;
-      // }
-
       try {
         const response = await fetch(
           `${BACKEND_BASE_URL}/shoeDetails/${id}/`,
           {
             method: "PATCH",
             body: FormDataToSend,
-            // headers: {
-            //   'X-CSRFToken': csrftoken 
-            // },
-            // credentials: "include"
             headers: {
               'Authorization': `Token ${token}` 
             },

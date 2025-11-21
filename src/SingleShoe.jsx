@@ -13,16 +13,17 @@ import Navbar from "./Navbar";
 import { useAuth } from "./AuthContext";
 import './SingleShoe.css';
 
-const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
-const INCORRECT_LOCAL_URL_PREFIX = "http://localhost:8000";
+// const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
+// const INCORRECT_LOCAL_URL_PREFIX = "http://localhost:8000";
 
 const getImageUrl = (imagePath) => {
   if (imagePath) {
-    const correctedUrl = imagePath.replace(
-      INCORRECT_LOCAL_URL_PREFIX,
-      BACKEND_BASE_URL
-    );
-    return correctedUrl;
+    // const correctedUrl = imagePath.replace(
+    //   INCORRECT_LOCAL_URL_PREFIX,
+    //   BACKEND_BASE_URL
+    // );
+    // return correctedUrl;
+    return imagePath;
   }
   return "";
 };
@@ -65,7 +66,8 @@ function SingleShoe() {
 
     setLoading(true);
 
-    const apiURL = `${BACKEND_BASE_URL}/shoeDetails/${id}/`;
+    // const apiURL = `${BACKEND_BASE_URL}/shoeDetails/${id}/`;
+    const apiURL = `/shoeDetails/${id}/`;
 
     const config = {
       headers: {

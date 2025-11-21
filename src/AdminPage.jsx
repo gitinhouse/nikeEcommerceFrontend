@@ -53,8 +53,8 @@ function AdminPage() {
     return field;
   };
 
-  const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
-  const INCORRECT_LOCAL_URL_PREFIX = "http://localhost:8000";
+  // const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
+  // const INCORRECT_LOCAL_URL_PREFIX = "http://localhost:8000";
 
   useEffect(() => {
     if (authLoading) return; 
@@ -63,7 +63,8 @@ function AdminPage() {
     setLoading(true);
 
     const backendOrderingParam = getBackendOrdering(sortByField, sortDirection);
-    let apiURL = `${BACKEND_BASE_URL}/shoeDetails/?page=${page + 1}&ordering=${backendOrderingParam}`;
+    // let apiURL = `${BACKEND_BASE_URL}/shoeDetails/?page=${page + 1}&ordering=${backendOrderingParam}`;
+    let apiURL = `/shoeDetails/?page=${page + 1}&ordering=${backendOrderingParam}`;
 
     if (searchQuery) {
         apiURL += `&search=${encodeURIComponent(searchQuery)}`;
@@ -136,7 +137,7 @@ function AdminPage() {
     // const csrftoken = getCookie('csrftoken');
     
     try {
-      const response = await fetch(`${BACKEND_BASE_URL}/shoeDetails/${id}/`, {
+      const response = await fetch(`/shoeDetails/${id}/`, {
         method: "DELETE",
         // credentials: "include",
         // headers: {

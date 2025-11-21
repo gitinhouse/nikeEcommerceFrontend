@@ -10,14 +10,14 @@ const safelyParseJson = (key) => {
       return JSON.parse(item);
     } catch (e) {
       console.error("Error parsing localStorage key:", key, e);
-      localStorage.removeItem(key); // Clear the bad data
+      localStorage.removeItem(key); 
     }
   }
-  return null; // Return null if invalid or not found
+  return null; 
 };
 
 export const AuthProvider = ({ children }) => {
-  // Use the safe parser for initial state
+
   const [token, setToken] = useState(localStorage.getItem('userToken'));
   const [user, setUser] = useState(safelyParseJson('user')); 
   const [loading, setLoading] = useState(false);
@@ -63,59 +63,3 @@ export const AuthProvider = ({ children }) => {
 export const useAuth = () => useContext(AuthContext);
 
 
-
-
-// export const AuthProvider = ({ children }) => {
-//   const [user, setUser] = useState(null); 
-//   const [isAuthenticated, setIsAuthenticated] = useState(false);
-//   const [loading, setLoading] = useState(true); // Add loading state
-
-//   useEffect(() => {
-//     // Function to verify authentication status with the backend
-//     const verifyAuthStatus = async () => {
-//       try {
-//         // Adjust this URL to match your Django endpoint path
-//         const response = await axios.get('https://gl7gpk5d-8000.inc1.devtunnels.ms/auth/api/login/user/', {
-//              withCredentials: true // Important for sending/receiving cookies
-//         });
-//         if (response.data.isAuthenticated) {
-//           setUser(response.data);
-//           setIsAuthenticated(true);
-//         }
-//       } catch (error) {
-//         // Not authenticated, likely a 401 response
-//         setUser(null);
-//         setIsAuthenticated(false);
-//       } finally {
-//         setLoading(false); // Stop loading regardless of outcome
-//       }
-//     };
-
-//     verifyAuthStatus();
-//   }, []); // Run only once on component mount
-
-//   // ... (login and logout functions might need adjustment if you switch to session auth completely)
-//   const login = (userData) => { // Login might just set the user data locally after a successful status check
-//     setUser(userData); 
-//     setIsAuthenticated(true);
-//   };
-
-//   const logout = () => {
-//     setUser(null);
-//     setIsAuthenticated(false);
-//     // Optionally call a Django logout API endpoint here
-//   };
-
-  
-
-//   const isAdmin = user ? user.is_staff : false;
-//   const userEmail = user ? user.username : null;
-
-//   return (
-//     <AuthContext.Provider value={{ user, isAuthenticated, loading, login, logout, isAdmin, userEmail }}>
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
-
-// export const useAuth = () => useContext(AuthContext);

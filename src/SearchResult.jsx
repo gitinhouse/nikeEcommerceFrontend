@@ -16,16 +16,17 @@ import Navbar from "./Navbar";
 import { useAuth } from "./AuthContext";
 import axios from "axios";
 
-const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
-const INCORRECT_LOCAL_URL = "http://localhost:8000";
+// const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
+// const INCORRECT_LOCAL_URL = "http://localhost:8000";
 
 const getImageUrl = (imagePath) => {
   if (imagePath) {
-    const correctedUrl = imagePath.replace(
-      INCORRECT_LOCAL_URL,
-      BACKEND_BASE_URL
-    );
-    return correctedUrl;
+    // const correctedUrl = imagePath.replace(
+    //   INCORRECT_LOCAL_URL,
+    //   BACKEND_BASE_URL
+    // );
+    // return correctedUrl;
+    return imagePath;
   }
   return "";
 };
@@ -49,7 +50,8 @@ function SearchResult() {
     setLoading(true);
     setError(null);
 
-    const apiUrl = `${BACKEND_BASE_URL}/shoeDetails/?search=${encodeURIComponent(
+    // const apiUrl = `${BACKEND_BASE_URL}/shoeDetails/?search=${encodeURIComponent(
+    const apiUrl = `/shoeDetails/?search=${encodeURIComponent(
       query
     )}&page=${currentPage}`;
 

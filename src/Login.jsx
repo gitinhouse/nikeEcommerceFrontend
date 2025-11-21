@@ -57,8 +57,9 @@ function Login() {
         password: values.password
       };
       try {
-        const response = await fetch('https://gl7gpk5d-8000.inc1.devtunnels.ms/login/', {
+        // const response = await fetch('https://gl7gpk5d-8000.inc1.devtunnels.ms/login/', {
         // const response = await fetch('http://127.0.0.1:8000/login/', {
+        const response = await fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(dataToSend),
@@ -109,10 +110,12 @@ function Login() {
       'https://www.googleapis.com/auth/userinfo.profile'
     ].join(' ');
 
+    const backendBaseUrl = window.location.origin;
+
     const params = {
       response_type: 'code',
       client_id:  "226108938232-p6im1cbskiar62ao8o8htnodbbf22hq0.apps.googleusercontent.com",
-      redirect_uri: `https://gl7gpk5d-8000.inc1.devtunnels.ms/${REDIRECT_URI}`,
+      redirect_uri: `${backendBaseUrl}/${REDIRECT_URI}`,
       prompt: 'select_account',
       access_type: 'offline',
       scope

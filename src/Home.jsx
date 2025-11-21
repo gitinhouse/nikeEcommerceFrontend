@@ -33,8 +33,8 @@ function Home() {
   const [pageCount, setPageCount] = useState(0);
   const [currentPage , setCurrentPage] = useState(1);
 
-  const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
-  const INCORRECT_LOCAL_URL_PREFIX = "http://localhost:8000";
+  // const BACKEND_BASE_URL = "https://gl7gpk5d-8000.inc1.devtunnels.ms";
+  // const INCORRECT_LOCAL_URL_PREFIX = "http://localhost:8000";
 
   useEffect(() => {
 
@@ -43,7 +43,7 @@ function Home() {
 
     setLoading(true);
 
-    let apiURL = `${BACKEND_BASE_URL}/shoeDetails/?page=${currentPage}`;
+    let apiURL = `/shoeDetails/?page=${currentPage}`;
 
     if (sortOrder !== 'default') {
         // 'ascending' maps to 'shoePrice', 'descending' maps to '-shoePrice'
@@ -126,8 +126,9 @@ function Home() {
             {shoes.map((shoe) => {
               const getImageUrl = (imagePath) => {
                 if (imagePath) {
-                  const correctedUrl = imagePath.replace(INCORRECT_LOCAL_URL_PREFIX, BACKEND_BASE_URL);
-                  return correctedUrl;
+                  // const correctedUrl = imagePath.replace(INCORRECT_LOCAL_URL_PREFIX, BACKEND_BASE_URL);
+                  // return correctedUrl;
+                  return imagePath;
                 }
                 return '';
               };
